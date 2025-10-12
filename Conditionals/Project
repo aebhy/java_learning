@@ -1,0 +1,44 @@
+package Conditionals;
+import java.util.*;
+public class Project_Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter first number : ");
+        int a = sc.nextInt();
+        
+        System.out.println("Enter second number : ");
+        int b = sc.nextInt();
+
+        System.out.println("Enter operation (+,-,*,/,%) : ");
+        String operator = sc.next(); 
+
+        int result = 0;
+        boolean valid = true;
+
+        if (operator.equals("+")) {
+            result = a + b;
+        } else if (operator.equals("-")) {
+            result = a - b;
+        } else if (operator.equals("*")) {
+            result = a * b;
+        } else if (operator.equals("/")) {
+            if (b != 0) {
+                result = a / b;
+            } else {
+                System.out.println("Cannot divide by zero.");
+                valid = false;
+            }
+        } else if (operator.equals("%")) {
+            result = a % b;
+        } else {
+            System.out.println("Invalid operation");
+            valid = false;
+        }
+
+        if (valid) {
+            System.out.println("Result: " + result);
+        }
+        sc.close();
+    }
+}
